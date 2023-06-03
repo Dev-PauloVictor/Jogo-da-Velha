@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: sans-serif;
+  width: 100%;
+   text-align: center; 
+}
+h2 {
+  display: inline-block;
+}
+
+/*Card_Placar*/
+.card-placar {
+  width: 90%;
+  height: 130px;
+  margin-top: 85px;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#placar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 15px;
+}
+
+#placar_Jogador,
+#placar_IA {
+  display: inline-block;
+  padding-top: 15px;
+font-size: 30px;
+}
+.divisor {
+  font-weight: 600;
+  font-size: 35px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+/*Card_JogoDaVelha*/
+.btn {
+  width: 100px;
+  height: 100px; 
+  background-color: black;
+  color: white;
+  border: 0;
+  border-radius: 10px;
+  font-size: 40px;
+  font-weight: 600;
+  margin: 2px ;
+   text-align: center; 
+  display: inline-block; 
+}
+.vazio{
+  color: white !important;
+}
+ 

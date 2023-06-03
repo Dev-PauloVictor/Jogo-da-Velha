@@ -1,0 +1,92 @@
+var simboloDoJogador = "X";
+var simboloDaIA = "O";
+var vitoriasJogador = 0;
+var vitoriasIA = 0;
+var turno = true;
+
+function clique(identificador) {
+    const botao = document.getElementById(identificador);
+    botao.innerHTML = simboloDoJogador;
+    verificarVitoria(simboloDoJogador);
+    if (!verificarEmpate()) {
+        turno = !turno;
+        if (!turno) {
+            jogadaIA();
+        }
+    }
+}
+
+function jogadaIA() {
+    var vazios = [];
+    var botoes = document.getElementsByClassName("btn");
+    for (var i = 0; i < botoes.length; i++) {
+        if (!botoes[i].innerHTML) {
+            vazios.push(botoes[i].id);
+        }
+    }
+
+    var aleatorio = Math.floor(Math.random() * vazios.length);
+    var identificador = vazios[aleatorio];
+    document.getElementById(identificador).innerHTML = simboloDaIA;
+    verificarVitoria(simboloDaIA);
+    verificarEmpate();
+    turno = !turno;
+}
+
+function verificarVitoria(simbolo) {
+    const combinacoesVitoria = [
+        ["btn1", "btn2", "btn3"],
+        ["btn4", "btn5", "btn6"],
+        ["btn7", "btn8", "btn9"],
+        ["btn1", "btn4", "btn7"],
+        ["btn2", "btn5", "btn8"],
+        ["btn3", "btn6", "btn9"],
+        ["btn1", "btn5", "btn9"],
+        ["btn3", "btn5", "btn7"]
+    ];
+
+    for (const combinacao of combinacoesVitoria) {
+        if (combinacao.every(botaoId => document.getElementById(botaoId).innerHTML === simbolo)) {
+            alert(`O jogador ${simbolo} venceu!`);
+            reiniciarJogo();
+            if (venceu) {
+                if (simbolo === simboloDoJogador) {
+                    vitoriasJogador++;
+                    document.getElementById("vitoriasJogador").innerHTML = vitoriasJogador;
+                } else if (simbolo === simboloDaIA) {
+                    vitoriasIA++;
+                    document.getElementById("vitoriasIA").innerHTML = vitoriasIA;
+                }
+            }
+            return;
+        }
+    }
+
+
+}
+
+// function verificarEmpate() {
+//     var botoes = document.getElementsByClassName("btn");
+//     var preenchidos = 0;
+//     for (var i = 0; i < botoes.length; i++) {
+//         if (botoes[i].innerHTML) {
+//             preenchidos++;
+//         }
+//     }
+//     if (preenchidos === botoes.length) {
+//         alert("Empate!");
+//         reiniciarJogo();
+//         return true;
+//     }
+//     return false;
+// }
+
+function reiniciarJogo() {
+    var botoes = document.getElementsByClassName("btn");
+    for (var i = 0; i < botoes.length; i++) {
+        botoes[i].innerHTML = "-";
+    }
+    turno = true;
+}
+document.getElementById("vitoriasJogador").innerHTML = vitoriasJogador;
+document.getElementById("vitoriasIA").innerHTML = vitoriasIA;

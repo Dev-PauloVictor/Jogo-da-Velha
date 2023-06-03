@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jogo Da Velha</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <div class="card-placar">
+      <h1 id="placar">Placar</h1>
+
+      <h2 id="placar_Jogador">Você - <span id="vitoriasJogador">0</span></h2>
+      <span class="divisor">X</span>
+      <h2 id="placar_IA"><span id="vitoriasIA">0</span> - IA</h2>
+    </div>
+
+    <div class="card">
+      
+      <div>
+        <button id="btn1" class="btn" onclick="clique('btn1')"><span class="vazio">-</span></button>
+        <button id="btn2" class="btn" onclick="clique('btn2')"><span class="vazio">-</span></button>
+        <button id="btn3" class="btn" onclick="clique('btn3')"><span class="vazio">-</span></button> 
+      </div>
+      
+       <div> 
+        <button id="btn4" class="btn" onclick="clique('btn4')"><span class="vazio">-</span></button>
+        <button id="btn5" class="btn" onclick="clique('btn5')"><span class="vazio">-</span></button>
+        <button id="btn6" class="btn" onclick="clique('btn6')"><span class="vazio">-</span></button> 
+       </div>
+      
+       <div>  
+        <button id="btn7" class="btn" onclick="clique('btn7')"><span class="vazio">-</span></button>
+        <button id="btn8" class="btn" onclick="clique('btn8')"><span class="vazio">-</span></button>
+        <button id="btn9" class="btn" onclick="clique('btn9')"><span class="vazio">-</span></button>
+      </div>
+    
+    </div>
+  </body>
+
+  <script src="./assets/velha.js"></script>
+</html>
