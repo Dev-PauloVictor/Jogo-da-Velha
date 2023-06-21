@@ -68,8 +68,9 @@ function verificarVitoria(simbolo) {
             return;
         }
     }
-    
+
 }
+
 function verificarEmpate() {
     var botoes = document.getElementsByClassName("btn");
     var preenchidos = 0;
@@ -78,6 +79,12 @@ function verificarEmpate() {
             preenchidos++;
         }
     }
+    if (preenchidos === botoes.length) {
+        alert("Empate!");
+        reiniciarJogo();
+        return true;
+    }
+    return false;
 }
 
 function reiniciarJogo() {
